@@ -19,6 +19,16 @@ export default function HomePage() {
           <li><a href="/api/whoami">GET /api/whoami</a> — current session info</li>
           <li><a href="/api/me">GET /api/me</a> — cached account data</li>
           <li><a href="/api/cached-profile">GET /api/cached-profile</a> — profile with remote lookup</li>
+          <li><a href="/api/head-inject?name=description&content=hello">GET /api/head-inject</a> — head injection PoC (safe)</li>
+          <li><a href={"/api/head-inject?name=description&onmouseover%3D%22alert(1)%22%20x=pwned"}>GET /api/head-inject</a> — head injection PoC (XSS)</li>
+        </ul>
+      </section>
+
+      <section style={{ background: "#fff", borderRadius: 12, padding: "1.5rem", marginBottom: "1.5rem", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+        <h2 style={{ margin: "0 0 1rem 0", fontSize: "1.2rem" }}>Vulnerability PoCs</h2>
+        <ul style={{ lineHeight: 2, paddingLeft: "1.2rem" }}>
+          <li><a href="/share?title=Hello&description=World">Share Preview (safe)</a></li>
+          <li><a href={"/share?title=Hello&onmouseover%3D%22alert(document.cookie)%22%20x=pwned"}>Share Preview (XSS via attr name)</a></li>
         </ul>
       </section>
     </main>
