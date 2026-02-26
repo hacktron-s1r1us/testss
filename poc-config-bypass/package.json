@@ -1,0 +1,16 @@
+{
+  "name": "poc-config-bypass",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "vinext start"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "vite": "^7.3.1",
+    "vinext": "^0.0.12"
+  }
+}
